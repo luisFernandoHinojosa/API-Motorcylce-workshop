@@ -22,7 +22,7 @@ exports.findOne = async(req, res) =>{
     const user = await UserServices.findOne(id)
 
     if(!user){
-      return res.status(400).json({
+      return res.status(404).json({
         status: 'Error',
         message: `User with id: ${id} not found`
       })
@@ -48,7 +48,7 @@ exports.create = async(req, res) =>{
       name, email, password, role
     })
     if(!user){
-      return res.status(400).json({
+      return res.status(404).json({
         status: 'Error',
         message: `email: ${email} already exists in the database`
       })
