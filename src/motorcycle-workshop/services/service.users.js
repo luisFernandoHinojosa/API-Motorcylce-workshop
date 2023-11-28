@@ -1,4 +1,4 @@
-const Users = require('../motorcycle-workshop.models')
+const {Users} = require('../motorcycle-workshop.models')
 
 class UserServices {
 
