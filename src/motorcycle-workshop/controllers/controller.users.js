@@ -1,4 +1,3 @@
-const { json } = require('sequelize')
 const UserServices = require('../services/service.users')
 
 exports.findAll = async(req, res) =>{
@@ -27,7 +26,6 @@ exports.findOne = async(req, res) =>{
         message: `User with id: ${id} not found`
       })
     }
-    console.log("user email: ", user.email)
 
     return res.status(200).json({
       user
