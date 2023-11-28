@@ -52,7 +52,7 @@ exports.create = async(req, res) =>{
   } catch (error) {
     return res.status(500).json({
       status: 'Fail',
-      message: 'Something went very wrong',
+      message: 'Something went very wrong.',
       error
     })
   }
@@ -66,7 +66,7 @@ exports.update = async(req, res) =>{
     if(!repair){
       return res.status(404).json({
         status: 'error',
-        message: `Repair with id: ${id} not found`
+        message: `Repair with id: ${id} not found.`
       })
     }
     const repairUpdated = await RepairServices.update(repair, {status})
@@ -76,7 +76,7 @@ exports.update = async(req, res) =>{
   } catch (error) {
     return res.status(500).json({
       status: 'Fail',
-      message: 'Something went very wrong',
+      message: 'Something went very wrong.',
       error
     })
   }
@@ -92,8 +92,8 @@ exports.suppress = async(req, res)=>{
     const repair = await RepairServices.findOne(id)
     if(!repair){
       return res.status(404).json({
-        status: 'error',
-        message: `Repair with id: ${id} not found or cancelled`
+        status: 'Error',
+        message: `The repair is now completed.`
       })
     }
     await RepairServices.delete(repair)
@@ -101,7 +101,7 @@ exports.suppress = async(req, res)=>{
   } catch (error) {
     return res.status(500).json({
       status: 'Fail',
-      message: 'Something went very wrong',
+      message: 'Something went very wrong.',
       error
     })   
   }
